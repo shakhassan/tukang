@@ -28,6 +28,7 @@
     <script type="text/javascript" src="base64.js"></script>
     <script type="text/javascript" src="json-processor.js"></script>
     <script type="text/javascript" src="crypto.js"></script>
+    <script type="text/javascript" src="password.js"></script>
 
   </head>
   <body>
@@ -48,6 +49,7 @@
             <li><a href="#" onclick="processBase64()">Base64</a></li>
             <li><a href="#" onclick="exampleCrypto()">Crypto</a></li>
             <li><a href="#" onclick="processJson()">JSON</a></li>
+            <li><a href="#" onclick="processJson()">Password Generator</a></li>
           </ul>
         </div>-->
 
@@ -78,6 +80,7 @@
           <li><a data-toggle="pill" href="#base64">Base64</a></li>
           <li><a data-toggle="pill" href="#crypto">Crypto</a></li>
           <li><a data-toggle="pill" href="#json">JSON</a></li>
+          <li><a data-toggle="pill" href="#passwordgen">Password Generator</a></li>
         </ul>
 
 
@@ -199,7 +202,22 @@
           <br><br>
           <textarea id="generatedJson" class="form-control" rows="10" id="comment"></textarea>
         </div>
-      </div>
+
+        <div id="passwordgen" class="tab-pane fade">
+      <h3>Password Generator</h3>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <input type="text" id="numOfPassword" class="form-control" placeholder="How many?">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" onclick="generatePassword(document.getElementById('numOfPassword').value)">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+      <div id="generatedPassword">Your result will be printed here...</div>
+
+      </div>     
     </div>
 
 
